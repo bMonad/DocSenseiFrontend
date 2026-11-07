@@ -3,15 +3,20 @@
   --paper: #f3eeff;
   --desk: #e8e2f5;
   --panel: #ffffff;
-  --ink: #302a42;
+  --ink: #252133;
   --muted: #78728a;
   --line: #e7e1ef;
   --accent: #7461b5;
   --accent-soft: #eee9fa;
+  --blue-soft: #dce9ff;
+  --violet-soft: #eae3fd;
   --mark: #e3dcf8;
+  --yellow: #ececa1;
   --danger: #a34456;
   --serif: "Nunito", system-ui, sans-serif;
   --sans: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --shadow-soft:
+    0 30px 60px -30px rgba(83, 58, 170, 0.35), 0 2px 6px rgba(83, 58, 170, 0.06);
 }
 
 *,

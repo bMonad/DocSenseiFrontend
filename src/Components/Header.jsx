@@ -1,11 +1,6 @@
 import HomeIcons from './Home/HomeIcons'
 import Brand from './Brand'
-
-const LINKS = [
-  { id: "features", label: "Features" },
-  { id: "how", label: "How it works" },
-  { id: "why", label: "Why DocSensei" },
-];
+import { LINKS } from '../Constants/UIConstants'
 
 export default function Header() {
   return (
