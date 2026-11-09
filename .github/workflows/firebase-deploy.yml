@@ -1,0 +1,50 @@
+name: Deploy DocSensei Frontend to Firebase
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step 2: Setup Bun
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      # Step 3: Install dependencies
+      - name: Install Dependencies
+        run: bun install --frozen-lockfile
+
+      # Step 4: Build React application
+      - name: Build React Application
+        run: bun run build
+
+      # Step 5: Verify production build
+      - name: Verify Build Output
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "Error: dist directory not found!"
+            exit 1
+          fi
+
+          echo "Production build generated successfully."
+
+        # Step 6: Deploy to Firebase Hosting
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DOCSENSEI_7D02A }}
+          projectId: docsensei-7d02a
+          channelId: live
