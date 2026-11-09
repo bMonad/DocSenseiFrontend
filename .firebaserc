@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "docsensei-7d02a"
-  }
+  },
+  "targets": {
+    "docsensei-7d02a": {
+      "hosting": {
+        "production": [
+          "docsensei-ai"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

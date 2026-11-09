@@ -49,4 +49,5 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DOCSENSEI_7D02A }}
           projectId: docsensei-7d02a
+          target: production
           channelId: live
