@@ -16,10 +16,10 @@ export default function Hero() {
           </p>
 
           <div className="hero-actions">
-            <button className="button-primary">
-              Explore your PDF
+            <a className="button-primary" href="#features">
+              Explore Features
               <HomeIcons name="arrow" size={18} />
-            </button>
+            </a>
             <a className="button-secondary" href="#how">
               See how it works
               <HomeIcons name="down" size={18} />

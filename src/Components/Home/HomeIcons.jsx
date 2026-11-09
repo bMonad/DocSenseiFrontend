@@ -8,7 +8,9 @@ import {
   Tick01Icon,
   Upload01Icon,
   ChevronDownIcon,
-  ListViewIcon
+  ListViewIcon,
+  Image01Icon,
+  Search01Icon
 } from "@hugeicons/core-free-icons";
 
 const icons = {
@@ -20,7 +22,9 @@ const icons = {
   check: Tick01Icon,
   upload: Upload01Icon,
   down: ChevronDownIcon,
-  listview: ListViewIcon
+  listview: ListViewIcon,
+  image: Image01Icon,
+  search: Search01Icon
 }
 
 export default function HomeIcons({ name, size = 22 }) {
