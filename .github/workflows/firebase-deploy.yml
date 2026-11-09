@@ -43,6 +43,8 @@ jobs:
           echo "Production build generated successfully."
 
         # Step 6: Deploy to Firebase Hosting
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DOCSENSEI_7D02A }}
