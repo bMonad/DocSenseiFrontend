@@ -16,8 +16,8 @@ async function json(res) {
 }
 
 
-export async function getHealthStatus() {
-  const response = await fetch(`${API}/api/health`);
+export async function getHealthStatus(signal) {
+  const response = await fetch(`${API}/api/health`, { signal });
   if (!response.ok) throw new Error(`Health check failed (${response.status})`);
 }
 
