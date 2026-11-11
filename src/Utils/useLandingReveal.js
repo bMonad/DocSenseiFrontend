@@ -1,12 +1,18 @@
 import { useEffect } from "react";
 
-export function useLandingReveal() {
+export function useLandingReveal(rootRef) {
   useEffect(() => {
-    const sections = document.querySelectorAll(".landing-reveal");
+    const root = rootRef.current;
+
+    if (!root) {
+      return undefined;
+    }
+
+    const elements = root.querySelectorAll("[data-reveal]");
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-      sections.forEach((section) => section.classList.add("is-visible"));
+      elements.forEach((element) => element.classList.add("is-visible"));
       return undefined;
     }
 
@@ -17,11 +23,9 @@ export function useLandingReveal() {
           observer.unobserve(entry.target);
         }
       });
-    },
-      { threshold: 0.12 },
-    );
+    }, { threshold: 0.12 });
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect()
-  }, []);
+    elements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, [rootRef]);
 }
