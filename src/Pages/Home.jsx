@@ -1,9 +1,13 @@
 import Header from "../Components/Header";
 import Hero from "../Components/Home/Hero";
 import Features from "../Components/Home/Features";
+import { useLandingReveal } from "../Utils/useLandingReveal";
+import Steps from "../Components/Home/Steps";
+import Footer from "../Components/Home/Footer";
 
 export default function Home() {
 
+  useLandingReveal();
 
   return (
     <>
@@ -15,6 +19,8 @@ export default function Home() {
         <Header />
         <Hero />
         <Features />
+        <Steps />
+        <Footer />
       </main>
     </>
   )

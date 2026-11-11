@@ -67,6 +67,18 @@ export default function LoadingScreen({ onComplete }) {
         viewBox="0 0 1000 240"
         aria-hidden="true"
       >
+        <defs>
+          <linearGradient
+            id="loading-screen-text-gradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="0%"
+          >
+            <stop offset="0%" stopColor="var(--accent)" />
+            <stop offset="100%" stopColor="#da60ff" />
+          </linearGradient>
+        </defs>
         <text
           className="loading-screen__text"
           x="500"

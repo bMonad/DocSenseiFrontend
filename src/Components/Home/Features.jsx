@@ -10,8 +10,8 @@ export default function Features() {
         <p>One thoughtful workspace for turning long documents into learning that sticks.</p>
       </div>
       <div className="feature-grid">
-        {FEATURES.map((feature) => (
-          <article className="feature-card">
+        {FEATURES.map((feature, idx) => (
+          <article className="feature-card" key={`${feature.icon}-${idx}`}>
             <span className="feature-icon">
               <HomeIcons name={feature.icon} />
             </span>
