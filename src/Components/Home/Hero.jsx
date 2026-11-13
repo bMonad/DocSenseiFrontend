@@ -1,7 +1,7 @@
 import HomeIcons from "./HomeIcons";
 import ProductPreview from "./ProductPreview";
 
-export default function Hero() {
+export default function Hero({ onExplore }) {
   return (
     <section className="home-hero">
       <div className="wrap hero-grid">
@@ -16,7 +16,7 @@ export default function Hero() {
           </p>
 
           <div className="hero-actions">
-            <button type="button" className="button-primary" >
+            <button type="button" className="button-primary" onClick={onExplore}>
               Explore your PDF
               <HomeIcons name="arrow" size={18} />
             </button>

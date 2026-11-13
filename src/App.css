@@ -24,3 +24,16 @@
 .brand-period {
   color: #8d78c8;
 }
+
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+  background: var(--paper);
+}
+
+.route-content,
+.home-footer {
+  position: relative;
+  z-index: 1;
+}

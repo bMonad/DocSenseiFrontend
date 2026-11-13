@@ -40,7 +40,6 @@ button {
 
 .home-nav,
 .home-hero,
-.upload-callout,
 .features-section,
 .steps-section,
 .benefits-section,
@@ -88,12 +87,26 @@ button {
 }
 
 .home-nav {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: min(100%, 1280px);
+  width: 100%;
   min-height: 94px;
-  margin: 0 auto;
+  padding-inline: clamp(22px, 7vw, 108px);
+  transition:
+    background-color 200ms ease,
+    backdrop-filter 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.home-nav--scrolled {
+  background: rgba(243, 238, 255, 0.484);
+  box-shadow: 0 8px 26px rgba(65, 53, 94, 0.07);
+  backdrop-filter: blur(16px);
 }
 
 .home-brand,
@@ -147,6 +160,10 @@ button {
 }
 
 /* --- Hero Section --- */
+.route-content {
+  padding-top: 94px;
+}
+
 .home-hero,
 .features-section,
 .steps-section,
@@ -264,8 +281,7 @@ button {
 }
 
 .button-primary:disabled,
-.landing-nav-cta:disabled,
-.upload-button:disabled {
+.landing-nav-cta:disabled {
   cursor: progress;
   opacity: 0.75;
 }
@@ -949,9 +965,10 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: min(100%, 1280px);
-  min-height: 100px;
-  margin: 26px auto 0;
+  width: 100%;
+  min-height: 60px;
+  margin: 22px auto 0;
+  padding-inline: clamp(22px, 7vw, 108px);
 }
 
 .home-footer > span {
@@ -1019,11 +1036,19 @@ button {
 }
 
 @media (max-width: 680px) {
+  html {
+    scroll-padding-top: 90px;
+  }
+
   .home {
     padding: 0 21px;
   }
   .home-nav {
     min-height: 75px;
+    padding-inline: 21px;
+  }
+  .route-content {
+    padding-top: 75px;
   }
   .home-brand {
     font-size: 36px;
@@ -1172,6 +1197,7 @@ button {
   .home-footer {
     min-height: 85px;
     margin: 0 auto;
+    padding-inline: 21px;
   }
   .home-footer .footer-brand {
     font-size: 31px;

@@ -1,11 +1,16 @@
-import Brand from "../Brand";
+import Brand from "./Brand";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <footer className="home-footer">
-      <a className="footer-brand" href="#" aria-label="DocSensei home">
+      <Link
+        className="footer-brand"
+        to="/"
+        aria-label="DocSensei home"
+      >
         <Brand size="md" />
-      </a>
+      </Link>
       <span>A little more clarity, page by page.</span>
     </footer>
   );
