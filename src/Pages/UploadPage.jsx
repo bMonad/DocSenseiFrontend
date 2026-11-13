@@ -8,7 +8,6 @@ import "../styles/UploadScreen.css";
 const UploadPage = () => {
   const { onDocumentReady } = useOutletContext();
   const uploader = useUploader(onDocumentReady);
-  const onUpload = uploader.pick();
   const rootRef = useRef(null);
   useLandingReveal(rootRef);
 
@@ -26,7 +25,7 @@ const UploadPage = () => {
             <button
               type="button"
               className={`drop${uploader.dragging ? " drop--dragging" : ""}`}
-              onClick={onUpload}
+              onClick={uploader.pick}
               aria-describedby="drop-hint"
               disabled={uploader.busy}
               {...uploader.dropProps}
