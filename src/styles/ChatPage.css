@@ -1,0 +1,16 @@
+.chat-page {
+  display: grid;
+  min-height: calc(100vh - 176px);
+  min-height: calc(100svh - 176px);
+  padding: clamp(24px, 4vw, 48px) 24px;
+  place-items: center;
+  width: min(92%, 1000px);
+  margin-inline: auto;
+  padding: clamp(40px, 6vw, 76px) clamp(20px, 5vw, 64px);
+}
+
+.chat-page p {
+  text-align: center;
+  font-size: large;
+  font-weight: 800;
+}

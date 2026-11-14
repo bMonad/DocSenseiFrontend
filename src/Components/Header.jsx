@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import HomeIcons from './Home/HomeIcons'
 import Brand from './Brand'
 import { LINKS } from '../Constants/UIConstants'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { pathname } = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -29,17 +30,19 @@ export default function Header() {
       >
         <Brand />
       </Link>
-      <nav className='home-links' aria-label='Main Navigation'>
-        {LINKS.map((link) => (
-          <a
-            key={link.id}
-            href={`/#${link.id}`}
-            onClick={(event) => handleSectionClick(event, link.id)}
-          >
-            {link.label}
-          </a>
-        ))}
-      </nav>
+      {pathname === "/" && (
+        <nav className='home-links' aria-label='Main Navigation'>
+          {LINKS.map((link) => (
+            <a
+              key={link.id}
+              href={`/#${link.id}`}
+              onClick={(event) => handleSectionClick(event, link.id)}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      )}
 
       <button type='button' className='home-nav-cta' onClick={() => navigate("/upload")}>
         <HomeIcons name="upload" size={16} />
